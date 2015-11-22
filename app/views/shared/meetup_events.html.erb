@@ -11,6 +11,7 @@
           <span class="badge"> <%= event.yes_rsvp_count %> </span>
           <p> <%= event.name %> </p>
           <a href=<%= event.event_url %>><%= event.event_url %></a>
+          <p> <%= event.starts_at.localtime.to_s(:long) %> - <%= event.ends_at.localtime.to_s(:long) %></p>
         </li>
       <% end %>
     </ul>

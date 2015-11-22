@@ -11,9 +11,10 @@ class MeetupEventBuilder
       address: event['venue']['address_1'],
       address_name: event['venue']['name'],
       address_city: event['venue']['city'],
-      time: event['time'],
-      duration: event['duration'],
+      starts_at: Time.at(event['time'] / 1000),
+      duration_in_minutes: event['duration'] / 100_000,
       yes_rsvp_count: event['yes_rsvp_count']
     )
   end
+
 end
